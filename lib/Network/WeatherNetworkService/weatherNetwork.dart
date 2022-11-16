@@ -5,10 +5,10 @@ import 'package:logger/logger.dart';
 
 
 class WeatherNetwork{
-  Future callWeather()async {
+  Future callWeather(String? city)async {
     try{
       var response=await http.get(
-        Uri.parse("http://api.openweathermap.org/data/2.5/weather?appid=8598c1b0b4e91b68974101d97a10552b&q=Hyderabad"),
+        Uri.parse("http://api.openweathermap.org/data/2.5/weather?appid=8598c1b0b4e91b68974101d97a10552b&q="+city!),
         headers: {
           "Accept": "application/json"
         },

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:untitled1/Bloc/weather_cubit.dart';
 
 import 'Presentation/pages/home_page.dart';
 
@@ -7,7 +9,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp
+
+  ({super.key});
 
   // This widget is the root of your application.
   @override
@@ -17,7 +21,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home:  BlocProvider(
+        create: (context) => WeatherCubit(),
+        child: HomePage(),
+      ),
     );
   }
 }

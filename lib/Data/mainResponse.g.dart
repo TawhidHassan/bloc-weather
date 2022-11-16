@@ -14,6 +14,7 @@ MainResponse _$MainResponseFromJson(Map<String, dynamic> json) => MainResponse(
           ?.map((e) => Weather.fromJson(e as Map<String, dynamic>))
           .toList(),
       json['base'] as String?,
+      json['message'] as String?,
       json['main'] == null
           ? null
           : Main.fromJson(json['main'] as Map<String, dynamic>),
@@ -28,7 +29,6 @@ MainResponse _$MainResponseFromJson(Map<String, dynamic> json) => MainResponse(
       json['timezone'] as num?,
       json['id'] as num?,
       json['name'] as String?,
-      json['cod'] as num?,
     );
 
 Map<String, dynamic> _$MainResponseToJson(MainResponse instance) =>
@@ -36,6 +36,7 @@ Map<String, dynamic> _$MainResponseToJson(MainResponse instance) =>
       'coord': instance.coord,
       'weather': instance.weather,
       'base': instance.base,
+      'message': instance.message,
       'main': instance.main,
       'visibility': instance.visibility,
       'wind': instance.wind,
@@ -44,5 +45,4 @@ Map<String, dynamic> _$MainResponseToJson(MainResponse instance) =>
       'timezone': instance.timezone,
       'id': instance.id,
       'name': instance.name,
-      'cod': instance.cod,
     };

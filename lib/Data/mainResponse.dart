@@ -13,6 +13,7 @@ class MainResponse{
   Coord?coord;
   List<Weather>?weather;
   String? base;
+  String? message;
   Main? main;
   num? visibility;
   Wind? wind;
@@ -21,13 +22,14 @@ class MainResponse{
   num?timezone;
   num?id;
   String?name;
-  num?cod;
+
 
 
   MainResponse(
       this.coord,
       this.weather,
       this.base,
+      this.message,
       this.main,
       this.visibility,
       this.wind,
@@ -35,8 +37,7 @@ class MainResponse{
       this.sky,
       this.timezone,
       this.id,
-      this.name,
-      this.cod);
+      this.name);
 
   factory MainResponse.fromJson(Map<String,dynamic>json)=>
       _$MainResponseFromJson(json);
